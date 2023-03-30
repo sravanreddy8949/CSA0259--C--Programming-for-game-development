@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPrime(int num);
+
+int main() 
+{
+    int start = 12, end = 30, i;
+    printf("Prime numbers between %d and %d are: ", start, end);
+
+    for (i = start; i <= end; i++)
+    {
+        if (isPrime(i)) 
+        {
+            printf("%d ", i);
+        }
+    }
+    return 0;
+}
+
+bool isPrime(int num) 
+{
+    int i;
+    if (num <= 1) 
+    {
+        return false;
+    }
+    for (i = 2; i <= num/2; i++)
+    {
+        if (num % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
